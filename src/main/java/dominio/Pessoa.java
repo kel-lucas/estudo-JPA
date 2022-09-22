@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/*Indica que a classe também é uma Entidade.*/
 @Entity
 public class Pessoa implements Serializable{
 	
@@ -15,7 +16,15 @@ public class Pessoa implements Serializable{
 	 */
 	
 	private static final long serialVersionUID = 1L;
+	/* Indica que o seguinte campo/atributo é a Primary Key da Entidade */
 	@Id
+	/*
+	 * Informa ao provedor de persitência (no caso, Hibernate) que a Primary Key
+	 * será gerenciada por ele. A strategy adotada é provedor de persistência que os
+	 * valores a serem atribuídos ao identificador único serão gerados pela coluna
+	 * de auto incremento do banco de dados. Assim, um valor para o identificador é
+	 * gerado para cada registro inserido no banco.
+	 */
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
